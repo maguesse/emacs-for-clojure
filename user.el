@@ -63,3 +63,10 @@
 
 ;; Save here instead of littering current directory with emacs backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
+
+;; Keybindings to make Emacs allow special char ({,},[,],|,...) on
+;; French Mac keyboard.
+(if (eq system-type 'darwin)
+    (setq default-input-method "MacOSX"
+          mac-option-modifier nil
+          mac-command-modifier 'meta))
